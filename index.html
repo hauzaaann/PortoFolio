@@ -518,6 +518,30 @@
         padding: 24px;
       }
 
+			.hero-profile-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  transform: translate(90px, -125px);
+}
+
+/* Tablet and smaller */
+@media (max-width: 900px) {
+  .hero-profile-img {
+    transform: translate(20px, -40px); /* softer shift */
+    max-width: 280px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-profile-img {
+    transform: none; /* center naturally */
+    max-width: 260px;
+    margin: 0 auto;
+  }
+				}
+
       /* about */
       .about-wrap {
         background: var(--glass-heavy);
@@ -913,16 +937,11 @@
               style="display: flex; justify-content: center"
             >
               <img
-                src="Assets/Image/profile.png"
-                alt="Hauzan Dzakwan Kh — Frontend Developer portrait"
-                style="
-                  max-width: 320px;
-                  width: 100%;
-                  height: auto;
-                  transform: translate(+90px, -125px);
-                "
-                loading="lazy"
-              />
+  src="Assets/Image/profile.png"
+  alt="Hauzan Dzakwan Kh — Frontend Developer portrait"
+  class="hero-profile-img"
+  loading="lazy"
+/>
             </div>
           </div>
         </div>
