@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover"
+    />
+
+    <!-- ========== 🔍 SEO META OPTIMIZATION ========== -->
+    <title>Hauzan Dzakwan Kh · Frontend Developer & UI Specialist</title>
+    <meta
+      name="description"
+      content="Frontend developer portfolio of Hauzan Dzakwan Kh — building fast, responsive, and visually sharp web experiences. Explore modern projects and let's collaborate."
+    />
+    <meta
+      name="keywords"
+      content="Hauzan Dzakwan Kh, Frontend Developer, Web Developer, React, Tailwind, Portfolio, UI/UX, Interactive Design, Indonesia"
+    />
+    <meta name="author" content="Hauzan Dzakwan Kh" />
+
+    <!-- Open Graph / Social -->
+    <meta
+      property="og:title"
+      content="Hauzan Dzakwan Kh · Frontend Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Crafting modern web interfaces with speed and clarity. View selected work and connect."
+    />
+   <meta property="og:image" content="./Assets/Image/SEO.png" />
+    <!-- Replace with actual URL -->
+    <meta property="og:url" content="https://hauzan.dev" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Hauzan Dzakwan Kh · Frontend Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Frontend developer focused on clean, responsive, and performant web experiences."
+    />
+    <meta name="twitter:image" content="Assets/Image/SEO.png" />
+
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://hauzan.dev" />
+    <link rel="icon" href="Assets/Image/profile.ico" />
+
+    <!-- Preconnect for fonts (already present, kept) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ===== RESET & ROOT ===== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #000000;
+        --glass-ios: rgba(15, 15, 22, 0.65);
+        --glass-heavy: rgba(10, 10, 16, 0.8);
+        --border-ios: rgba(255, 255, 255, 0.08);
+        --primary: #6366f1;
+        --primary-soft: #8183f4;
+        --accent-orange: #f59e0b;
+        --accent-green: #22c55e;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0c0;
+        --font-ios:
+          "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+        --radius-ios-sm: 14px;
+        --radius-ios-md: 22px;
+        --radius-ios-lg: 34px;
+        --radius-full: 9999px;
+        --ease-ios: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --spring-ios: cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--bg);
+        color: var(--text-primary);
+        font-family: var(--font-ios);
+        line-height: 1.5;
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+        position: relative;
+      }
+      /* Skip link — accessibility */
+      .skip-to-content {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--primary);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 30px;
+        text-decoration: none;
+        z-index: 10000;
+        transition: top 0.2s;
+      }
+      .skip-to-content:focus {
+        top: 10px;
+        left: 10px;
+      }
+
+      /* Background video */
+      .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        filter: brightness(0.45) contrast(1.1);
+        pointer-events: none;
+      }
+      .video-overlay {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(
+          circle at 30% 40%,
+          rgba(20, 20, 40, 0.25) 0%,
+          #000000 95%
+        );
+        z-index: -1;
+        pointer-events: none;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0c0c10;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3a3a50;
+        border-radius: 20px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 580;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: clamp(36px, 6vw, 56px);
+        font-weight: 620;
+      }
+      h3 {
+        font-size: 22px;
+        font-weight: 560;
+        margin-bottom: 28px;
+        display: inline-block;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--primary);
+      }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 6%;
+        position: relative;
+        z-index: 2;
+      }
+      section {
+        padding: 100px 0;
+        position: relative;
+        backdrop-filter: blur(2px);
+      }
+
+      /* animations */
+      .ios-fade-up {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        transition:
+          opacity 0.9s var(--ease-ios),
+          transform 0.9s var(--spring-ios);
+      }
+      .ios-fade-up.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .ios-fade-left {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition:
+          opacity 0.8s var(--ease-ios),
+          transform 0.8s var(--spring-ios);
+      }
+      .ios-fade-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .ios-fade-right {
+        opacity: 0;
+        transform: translateX(40px);
+        transition:
+          opacity 0.8s var(--ease-ios),
+          transform 0.8s var(--spring-ios);
+      }
+      .ios-fade-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* navbar */
+      .navbar-ios {
+        position: fixed;
+        top: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        padding: 10px 24px;
+        backdrop-filter: blur(24px) saturate(200%);
+        -webkit-backdrop-filter: blur(24px) saturate(200%);
+        background: rgba(20, 20, 30, 0.5);
+        border: 1px solid #333;
+        border-radius: 9999px;
+        width: calc(100% - 2rem);
+        max-width: 750px;
+        transition:
+          border-radius 0.3s,
+          background 0.3s;
+        box-shadow:
+          0 20px 40px -12px #000000cc,
+          0 0 0 0.5px rgba(99, 102, 241, 0.2);
+      }
+      .navbar-ios.menu-open {
+        border-radius: 28px;
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 20px;
+      }
+      .nav-logo-custom {
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+      .dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #e5e7eb;
+        opacity: 0.9;
+      }
+      .dot-top {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .dot-left {
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .dot-right {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .dot-bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .nav-links-desktop {
+        display: none;
+        align-items: center;
+        gap: 28px;
+      }
+      @media (min-width: 640px) {
+        .nav-links-desktop {
+          display: flex;
+        }
+      }
+      .animated-link {
+        height: 20px;
+        line-height: 20px;
+        overflow: hidden;
+        display: inline-block;
+      }
+      .animated-link a {
+        text-decoration: none;
+        display: block;
+      }
+      .link-stack {
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.35s var(--ease-ios);
+        transform: translateY(0);
+      }
+      .animated-link:hover .link-stack {
+        transform: translateY(-20px);
+      }
+      .link-default {
+        color: #d1d5db;
+        font-size: 14px;
+        font-weight: 480;
+      }
+      .link-hover {
+        color: white;
+        font-size: 14px;
+        font-weight: 480;
+      }
+      .hire-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+      .hire-glow {
+        position: absolute;
+        inset: -8px;
+        border-radius: 9999px;
+        background: var(--primary);
+        opacity: 0.35;
+        filter: blur(12px);
+        pointer-events: none;
+        transition: all 0.3s;
+      }
+      .hire-wrapper:hover .hire-glow {
+        opacity: 0.65;
+        filter: blur(18px);
+        inset: -12px;
+      }
+      .btn-hire {
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        color: white;
+        font-weight: 600;
+        padding: 8px 20px;
+        border-radius: 9999px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 8px 18px -6px #6366f1b3;
+        transition: all 0.25s var(--spring-ios);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .btn-hire:hover {
+        transform: scale(1.02) translateY(-2px);
+        box-shadow: 0 14px 24px -8px #8b5cf6;
+      }
+      .desktop-buttons {
+        display: none;
+      }
+      @media (min-width: 640px) {
+        .desktop-buttons {
+          display: block;
+        }
+      }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        color: #d1d5db;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      @media (min-width: 640px) {
+        .menu-toggle {
+          display: none;
+        }
+      }
+      .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        transition:
+          max-height 0.3s,
+          opacity 0.3s;
+        max-height: 0;
+        opacity: 0;
+        padding-top: 0;
+        pointer-events: none;
+      }
+      .mobile-menu.open {
+        max-height: 400px;
+        opacity: 1;
+        padding-top: 20px;
+        pointer-events: auto;
+      }
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+      }
+      .mobile-nav a {
+        color: #d1d5db;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      .mobile-nav a:hover {
+        color: white;
+      }
+      .mobile-buttons {
+        margin-top: 16px;
+        width: 100%;
+      }
+
+      /* hero */
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr;
+        align-items: center;
+        gap: 50px;
+        min-height: 90vh;
+        padding-top: 40px;
+      }
+      .hero-title {
+        font-size: clamp(44px, 8vw, 76px);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+      }
+      .hero-sub {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 500px;
+        margin-bottom: 32px;
+      }
+      .hero-stats {
+        display: flex;
+        gap: 40px;
+        margin: 40px 0 30px;
+      }
+      .stat-item h4 {
+        font-size: 28px;
+        font-weight: 650;
+      }
+      .stat-item p {
+        font-size: 13px;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .hero-avatars {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 20px;
+      }
+      .avatar-group {
+        display: flex;
+      }
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        background: #2a2a3a;
+        margin-left: -8px;
+        background-size: cover;
+      }
+      .avatar:first-child {
+        margin-left: 0;
+      }
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin: 30px 0;
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+        padding: 14px 32px;
+        border-radius: 40px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid #4b5563;
+        color: white;
+        padding: 14px 32px;
+        border-radius: 40px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .hero-card {
+        background: rgba(20, 20, 30, 0.5);
+        backdrop-filter: blur(16px);
+        border: 1px solid #2a2a40;
+        border-radius: 32px;
+        padding: 24px;
+      }
+
+      /* about */
+      .about-wrap {
+        background: var(--glass-heavy);
+        backdrop-filter: blur(20px);
+        border-radius: 36px;
+        padding: 48px;
+        border: 1px solid var(--border-ios);
+      }
+      .about-headline {
+        font-size: 36px;
+        font-weight: 560;
+        margin-bottom: 24px;
+      }
+      .highlight {
+        display: inline-block;
+        padding: 4px 14px;
+        border-radius: 40px;
+        font-weight: 560;
+        border: 1.5px dashed;
+      }
+      .hl-blue {
+        color: #a5b4fc;
+        border-color: #6366f1;
+        background: rgba(99, 102, 241, 0.12);
+      }
+      .hl-orange {
+        color: #fbbf24;
+        border-color: #f59e0b;
+        background: rgba(245, 158, 11, 0.1);
+      }
+      .hl-green {
+        color: #86efac;
+        border-color: #22c55e;
+        background: rgba(34, 197, 94, 0.1);
+      }
+
+      /* portfolio */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+      }
+      .project-card {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        border-radius: 28px;
+        overflow: hidden;
+        text-decoration: none;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.7);
+        transition:
+          transform 0.45s var(--spring-ios),
+          box-shadow 0.45s var(--spring-ios);
+      }
+      .project-card:hover {
+        transform: translateY(-10px) scale(1.015);
+        box-shadow: 0 35px 45px -12px rgba(99, 102, 241, 0.7);
+      }
+      .card-media {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+      .project-card:hover .card-media {
+        transform: scale(1.08);
+      }
+      .card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          #0b0b18 5%,
+          rgba(20, 20, 40, 0.75) 45%,
+          rgba(0, 0, 0, 0.1) 85%
+        );
+      }
+      .card-content {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+      .card-btn {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 500;
+        background: rgba(20, 20, 35, 0.6);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+      .card-btn::after {
+        content: "→";
+        opacity: 0.7;
+        transition: transform 0.3s;
+      }
+      .project-card:hover .card-btn {
+        background: var(--primary);
+        padding-right: 22px;
+      }
+      .project-card:hover .card-btn::after {
+        transform: translateX(4px);
+      }
+
+      /* contact */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 40px;
+        background: var(--glass-heavy);
+        backdrop-filter: blur(24px);
+        border-radius: 36px;
+        padding: 44px;
+        border: 1px solid var(--border-ios);
+      }
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-ios);
+        border-radius: 20px;
+        padding: 16px 20px;
+        color: white;
+        margin-bottom: 20px;
+      }
+      .btn-send {
+        background: var(--primary);
+        padding: 16px 36px;
+        border-radius: 40px;
+        width: 100%;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        color: white;
+      }
+      .footer {
+        padding: 32px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @media (max-width: 900px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 600px) {
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- GLOBAL BACKGROUND VIDEO (optimized) -->
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    >
+      <source src="Assets/Video/background.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay" aria-hidden="true"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="navbar-ios" id="mainNavbar" role="banner">
+      <div class="nav-container">
+        <div
+          class="nav-logo-custom"
+          aria-label="Hauzan Dzakwan Kh logo"
+          role="img"
+        >
+          <span class="dot dot-top"></span><span class="dot dot-left"></span>
+          <span class="dot dot-right"></span
+          ><span class="dot dot-bottom"></span>
+        </div>
+        <nav class="nav-links-desktop" aria-label="Main navigation">
+          <div class="animated-link">
+            <a href="#home"
+              ><div class="link-stack">
+                <span class="link-default">Home</span
+                ><span class="link-hover">Home</span>
+              </div></a
+            >
+          </div>
+          <div class="animated-link">
+            <a href="#about"
+              ><div class="link-stack">
+                <span class="link-default">About</span
+                ><span class="link-hover">About</span>
+              </div></a
+            >
+          </div>
+          <div class="animated-link">
+            <a href="#portfolio"
+              ><div class="link-stack">
+                <span class="link-default">Work</span
+                ><span class="link-hover">Work</span>
+              </div></a
+            >
+          </div>
+          <div class="animated-link">
+            <a href="#contact"
+              ><div class="link-stack">
+                <span class="link-default">Contact</span
+                ><span class="link-hover">Contact</span>
+              </div></a
+            >
+          </div>
+        </nav>
+        <div class="desktop-buttons">
+          <div class="hire-wrapper">
+            <div class="hire-glow"></div>
+            <button
+              class="btn-hire"
+              onclick="alert('📬 Hire Hauzan Dzakwan Kh — let’s collaborate!')"
+              aria-label="Hire me"
+            >
+              Hire Me
+            </button>
+          </div>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <svg
+            id="menuIconOpen"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            id="menuIconClose"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="#home">Home</a><a href="#about">About</a
+          ><a href="#portfolio">Work</a><a href="#contact">Contact</a>
+        </nav>
+        <div class="mobile-buttons">
+          <div class="hire-wrapper" style="width: 100%">
+            <div class="hire-glow"></div>
+            <button
+              class="btn-hire"
+              style="width: 100%"
+              onclick="alert('Hire Me')"
+              aria-label="Hire me"
+            >
+              Hire Me
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- HOME / HERO -->
+      <section id="home" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="ios-fade-left visible">
+              <h1 id="hero-heading" class="hero-title">
+                I Build Modern<br />Web Interfaces<br />That Actually Work
+              </h1>
+              <p class="hero-sub">
+                Frontend developer focused on crafting fast, responsive, and
+                visually clean digital experiences — from idea to real product.
+              </p>
+              <div class="btn-group">
+                <button
+                  class="btn-primary"
+                  onclick="
+                    document
+                      .getElementById('portfolio')
+                      .scrollIntoView({ behavior: 'smooth' })
+                  "
+                  aria-label="View my portfolio"
+                >
+                  View Portfolio
+                </button>
+                <button
+                  class="btn-outline"
+                  onclick="
+                    document
+                      .getElementById('contact')
+                      .scrollIntoView({ behavior: 'smooth' })
+                  "
+                  aria-label="Contact me"
+                >
+                  Let’s Connect
+                </button>
+              </div>
+              <div class="hero-stats">
+                <div class="stat-item">
+                  <h4>12+</h4>
+                  <p>Projects Built</p>
+                </div>
+                <div class="stat-item">
+                  <h4>2+</h4>
+                  <p>Years Learning</p>
+                </div>
+                <div class="stat-item">
+                  <h4>100%</h4>
+                  <p>Commitment</p>
+                </div>
+              </div>
+              <div class="hero-avatars">
+                <div class="avatar-group" aria-hidden="true">
+                  <div
+                    class="avatar"
+                    style="
+                      background-image: url(&quot;https://randomuser.me/api/portraits/men/1.jpg&quot;);
+                    "
+                  ></div>
+                  <div
+                    class="avatar"
+                    style="
+                      background-image: url(&quot;https://randomuser.me/api/portraits/women/2.jpg&quot;);
+                    "
+                  ></div>
+                  <div
+                    class="avatar"
+                    style="
+                      background-image: url(&quot;https://randomuser.me/api/portraits/men/3.jpg&quot;);
+                    "
+                  ></div>
+                </div>
+                <div>
+                  <strong>40+</strong>
+                  <span style="color: var(--text-secondary)"
+                    >collaborations & builds</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="ios-fade-right visible"
+              style="display: flex; justify-content: center"
+            >
+              <img
+                src="Assets/Image/profile.png"
+                alt="Hauzan Dzakwan Kh — Frontend Developer portrait"
+                style="
+                  max-width: 320px;
+                  width: 100%;
+                  height: auto;
+                  transform: translate(+90px, -125px);
+                "
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT (with improved semantics) -->
+      <section id="about" aria-labelledby="about-heading">
+        <div class="container">
+          <div class="about-wrap ios-scale">
+            <h2 id="about-heading" class="about-headline">
+              I’m a
+              <span class="highlight hl-blue">Frontend Developer</span> who
+              builds<br />experiences that feel
+              <span class="highlight hl-green">fast, intuitive,</span><br />and
+              <span class="highlight hl-orange">visually sharp</span>
+            </h2>
+            <div style="max-width: 700px; opacity: 0.9; margin: 30px 0">
+              <p>
+                Focused on React, Tailwind, and modern animation — I merge clean
+                code with strong UX. Currently exploring AI integration and
+                interactive design.
+              </p>
+            </div>
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <div>
+                <strong style="font-size: 28px">Hauzan Dzakwan Kh.</strong
+                ><br />
+                <span>Frontend Architect & UI Specialist</span>
+              </div>
+              <button
+                class="btn-primary"
+                onclick="
+                  document
+                    .getElementById('contact')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+                aria-label="Let's talk"
+              >
+                Let’s talk →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO / WORK -->
+      <section id="portfolio" aria-labelledby="work-heading">
+        <div class="container">
+          <h2
+            id="work-heading"
+            class="ios-fade-up"
+            style="
+              font-size: 22px;
+              font-weight: 560;
+              margin-bottom: 28px;
+              display: inline-block;
+              padding-bottom: 8px;
+              border-bottom: 2px solid var(--primary);
+            "
+          >
+            Selected work
+          </h2>
+          <div class="projects-grid">
+            <!-- Card 1 -->
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="Drinking App - Beverage Exploration Project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3C/svg%3E"
+              >
+                <source src="Assets/Video/1.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>Drink Explorer</h4>
+                <p>beverage · interactive</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+            <!-- Card 2 -->
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="Domingo Beverage Brand - Immersive Drink Experience Project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/2.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>Domingo</h4>
+                <p>beverage brand · immersive</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+            <!-- Card 3 -->
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="Lagunitas - Beverage brand interactive experience project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/3.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>Lagunitas</h4>
+                <p>beverage brand · immersive experience</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+            <!-- Card 4 -->
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="Urban Store - Modern e-commerce mobile shopping experience project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/4.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>Urban Store</h4>
+                <p>e-commerce · mobile shopping experience</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+            <!-- Card 5 -->
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="GCore AI - 3D AI-powered product configurator project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/5.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>GCore AI</h4>
+                <p>AI-powered · 3D configurator</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+            <!-- Card 6 -->
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="FXIFY Future - simulated trading capital management platform up to 600K project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/6.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>FXIFY Future</h4>
+                <p>·trading platform</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="Anker - fueling startup with capital investment platform concept project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/7.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>Anker</h4>
+                <p>·investment platform</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="Discomer - unlimited content discovery platform interactive landing page project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/8.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>Discomer</h4>
+                <p>·discovery platform</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="project-card ios-fade-up"
+              aria-label="Gisnep Character - interactive character system project"
+            >
+              <video
+                class="card-media"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="none"
+              >
+                <source src="Assets/Video/10.mp4" type="video/mp4" />
+              </video>
+
+              <div class="card-overlay"></div>
+
+              <div class="card-content">
+                <h4>Gisnep Character</h4>
+                <p>interactive character · system</p>
+                <span class="card-btn">Explore</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <div class="container">
+          <div class="contact-grid ios-fade-up">
+            <div>
+              <h2
+                id="contact-heading"
+                style="font-size: 32px; font-weight: 580"
+              >
+                Got an idea?<br />Let’s make it real.
+              </h2>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  margin-top: 10px;
+                  max-width: 320px;
+                "
+              >
+                Open for freelance, collaboration, or just a quick chat. Drop
+                your idea — I’ll help you turn it into something real.
+              </p>
+              <div
+                style="
+                  margin-top: 20px;
+                  font-size: 13px;
+                  color: var(--text-secondary);
+                "
+              >
+                <div>📍 Indonesia</div>
+                <div>⚡ Fast response</div>
+              </div>
+            </div>
+            <div>
+              <form
+                onsubmit="
+                  event.preventDefault();
+                  alert('🚀 Message sent — I’ll get back to you soon.');
+                "
+              >
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  required
+                  aria-label="Your full name"
+                />
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  required
+                  aria-label="Your email address"
+                />
+                <textarea
+                  placeholder="Tell me about your project..."
+                  rows="4"
+                  aria-label="Project details"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="btn-send"
+                  aria-label="Send message"
+                >
+                  Send Message →
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container" role="contentinfo">
+      <div>© 2026 Hauzan Dzakwan Kh. All rights reserved.</div>
+      <div>
+        <a
+          href="#"
+          style="color: inherit; text-decoration: none"
+          aria-label="Instagram"
+          >IG</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        // Navbar mobile toggle with accessibility
+        const navbar = document.getElementById("mainNavbar");
+        const menuToggle = document.getElementById("menuToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const iconOpen = document.getElementById("menuIconOpen");
+        const iconClose = document.getElementById("menuIconClose");
+        let isOpen = false;
+        let timeoutId;
+
+        function setShape(open) {
+          if (timeoutId) clearTimeout(timeoutId);
+          if (open) navbar.classList.add("menu-open");
+          else
+            timeoutId = setTimeout(
+              () => navbar.classList.remove("menu-open"),
+              300,
+            );
+          menuToggle.setAttribute("aria-expanded", open);
+        }
+
+        menuToggle.addEventListener("click", () => {
+          isOpen = !isOpen;
+          mobileMenu.classList.toggle("open", isOpen);
+          iconOpen.style.display = isOpen ? "none" : "block";
+          iconClose.style.display = isOpen ? "block" : "none";
+          setShape(isOpen);
+        });
+
+        document.querySelectorAll(".mobile-nav a").forEach((link) => {
+          link.addEventListener("click", () => {
+            isOpen = false;
+            mobileMenu.classList.remove("open");
+            iconOpen.style.display = "block";
+            iconClose.style.display = "none";
+            setShape(false);
+          });
+        });
+
+        // Scroll animations
+        const animElements = document.querySelectorAll(
+          ".ios-fade-up, .ios-fade-left, .ios-fade-right, .ios-scale",
+        );
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) =>
+              e.target.classList.toggle("visible", e.isIntersecting),
+            );
+          },
+          { threshold: 0.2 },
+        );
+        animElements.forEach((el) => observer.observe(el));
+
+        // Active nav highlight
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(
+          ".animated-link a, .nav-links-desktop a",
+        );
+        function updateActive() {
+          let current = "";
+          const scrollPos = window.scrollY + 120;
+          sections.forEach((s) => {
+            if (
+              scrollPos >= s.offsetTop &&
+              scrollPos < s.offsetTop + s.offsetHeight
+            )
+              current = s.id;
+          });
+          navLinks.forEach((a) => {
+            const href = a.getAttribute("href")?.substring(1);
+            a.classList.toggle("active", href === current);
+            if (href === current) a.setAttribute("aria-current", "page");
+            else a.removeAttribute("aria-current");
+          });
+        }
+        window.addEventListener("scroll", updateActive);
+        window.addEventListener("load", updateActive);
+
+        // Smooth scroll
+        document
+          .querySelectorAll(
+            ".animated-link a, .nav-links-desktop a, .mobile-nav a",
+          )
+          .forEach((a) => {
+            a.addEventListener("click", function (e) {
+              e.preventDefault();
+              const id = this.getAttribute("href");
+              if (id === "#") return;
+              const target = document.querySelector(id);
+              if (target)
+                window.scrollTo({
+                  top: target.offsetTop - 90,
+                  behavior: "smooth",
+                });
+            });
+          });
+      })();
+    </script>
+
+    <!-- 
+    ========== SEO & TECHNICAL NOTES (suggested files) ==========
+    sitemap.xml content:
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url><loc>https://hauzan.dev/</loc><priority>1.0</priority></url>
+      <url><loc>https://hauzan.dev/#about</loc><priority>0.8</priority></url>
+      <url><loc>https://hauzan.dev/#portfolio</loc><priority>0.9</priority></url>
+      <url><loc>https://hauzan.dev/#contact</loc><priority>0.7</priority></url>
+    </urlset>
+
+    robots.txt content:
+    User-agent: *
+    Allow: /
+    Sitemap: https://hauzan.dev/sitemap.xml
+  --></body>
+</html>
